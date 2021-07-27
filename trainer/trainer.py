@@ -151,12 +151,11 @@ class Trainer:
                 if self.stop_validation:
                     break
 
-                input_tensor = batch[0]
-                target_tensor = batch[1]
-                outputs = self.model(input_tensor)
+                inputs, targets = self.get_input_and_target_from_batch(batch)
+                outputs = self.model(inputs)
 
                 for metric in metrics:
-                    metric.step(y=target_tensor, y_pred=outputs)
+                    metric.step(y=targets, y_pred=outputs)
 
         metrics_computed = {metric.name: metric.compute() for metric in metrics}
         self.model.train(previous_training_flag)

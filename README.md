@@ -19,7 +19,6 @@ import hydra
 from omegaconf import DictConfig, OmegaConf
 
 def run_train(cfg):
-    from trainer import Trainer
     factory = Factory(cfg)
     trainer = Trainer(cfg, factory)
     trainer.run_train()

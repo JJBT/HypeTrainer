@@ -5,9 +5,7 @@ HypeTrainer is a trainer for PyTorch models.
 ## Installation
 
 ```bash
-git clone https://github.com/JJBT/HypeTrainer.git
-cd HypeTrainer
-python3 setup.py install --user
+pip install git+https://github.com/JJBT/HypeTrainer.git
 ```
 
 ## Usage
